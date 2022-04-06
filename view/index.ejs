@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--Created By: William Charles See Ong | Student Id: C0797740-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plants</title>
+</head>
+<body>
+    <h1>Find the best Plants for Me!</h1>
+    <form action="/plants/search" method="GET">
+        <input type="text" name="name" id="name" placeholder="Search for Plants"/>
+        <input type="submit" value="Search The Name of the Plant"/>
+    </form>
+    <h2>List of the Plants:</h2>
+    <section data-position= 'plant'>
+        <% for(var i=0; i<alltheplants.length; i++) { %>
+            <%=alltheplants[i].Plant_Id %> &nbsp;
+            <%=alltheplants[i].Plant_Name %> &nbsp;
+            <%=alltheplants[i].Description %> &nbsp; 
+            <%=alltheplants[i].Care_Level %> &nbsp;
+            <%=alltheplants[i].Environment %> &nbsp;
+            <%=alltheplants[i].Water %> &nbsp;
+            <%=alltheplants[i].Light %> &nbsp;
+            <%=alltheplants[i].Plant_Size %> &nbsp;
+            <%=alltheplants[i].Plant_Type %> &nbsp; 
+            <%=alltheplants[i].Edible %> &nbsp; 
+            <%=alltheplants[i].Fruit_Bearing %> &nbsp; 
+            <%=alltheplants[i].Quantity %> &nbsp; <br>
+        <% } %>
+    </section>
+</body>
+</html>
