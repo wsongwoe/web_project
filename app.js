@@ -40,7 +40,10 @@ var plantController = require('./controller/plantController');
 app.get('/',plantController.GetAll);
 //Function to get all the details of the plant
 app.get('/plants/search',plantController.GetByName);
-
+app.get('/plants/id',plantController.GetById);
+app.get('/plants/type',plantController.GetByType);
+app.get('/plants/environment',plantController.GetByEnv);
+app.get('/plants/size',plantController.GetBySize);
 //Function to add plant
 app.post('/plant/add', plantController.Create);
 

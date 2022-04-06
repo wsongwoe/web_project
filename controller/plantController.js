@@ -24,6 +24,38 @@ module.exports={
         res.render('index.ejs',{alltheplants:results});
             });
     },
+    GetById:function(req,res){
+        console.log("Search for Plant Id");
+        const {Plant_Id}=req.query;
+        Plant.find({Plant_Id}, function(err,results){
+             if(err) throw err;
+        res.render('index.ejs',{alltheplants:results});
+            });
+    },
+    GetByType:function(req,res){
+        console.log("Search for Plant Id");
+        const {Plant_Type}=req.query;
+        Plant.find({Plant_Type}, function(err,results){
+             if(err) throw err;
+        res.render('index.ejs',{alltheplants:results});
+            });
+    },
+    GetByEnv:function(req,res){
+        console.log("Search for Plant Environment");
+        const {Environment}=req.query;
+        Plant.find({Environment}, function(err,results){
+             if(err) throw err;
+        res.render('index.ejs',{alltheplants:results});
+            });
+    },
+    GetBySize:function(req,res){
+        console.log("Search for Plant Size");
+        const {Plant_Size}=req.query;
+        Plant.find({Plant_Size}, function(err,results){
+             if(err) throw err;
+        res.render('index.ejs',{alltheplants:results});
+            });
+    },
     //Create function to add plants
     Create:function(req,res){
         console.log("Add Plants Details");
