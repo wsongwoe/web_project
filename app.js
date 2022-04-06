@@ -50,5 +50,8 @@ app.get('/add', function(req,res){
 })
 
 //Local Host Connection
-app.listen(8080);
+var server = app.listen(8080, function() {
+	var port = server.address().port
+	console.log("Server is listening on: http://localhost:%s", port)
+})
 
