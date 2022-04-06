@@ -16,6 +16,14 @@ module.exports={
             res.render('index.ejs',{alltheplants:results});
             });
     },
+    GetByName:function(req,res){
+        console.log("Search for Plant Names");
+        const {Plant_Name}=req.query;
+        Plant.find({Plant_Name}, function(err,results){
+             if(err) throw err;
+        res.render('index.ejs',{alltheplants:results});
+            });
+    },
     //Create function to add plants
     Create:function(req,res){
         console.log("Add Plants Details");
