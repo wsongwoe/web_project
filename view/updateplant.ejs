@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--Created By: William Charles See Ong | Student Id: C0797740-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update the plant</title>
+</head>
+<body>
+  <h1>Update Plants</h1>  
+  <form action="/plant/update/<%= theplant.Plant_Id %>" method="POST">
+    
+      Plant Name:<input type="text" name="Plant_Name" id="Plant_Name" value="<%= theplant.Plant_Name %>" /> </br>
+      Description: <input type="text" name="Description" id="Description" value="<%= theplant.Description %>"/> </br>
+      Care Level:  
+      <select name="Care_Level" id="Care_Level">
+        <option value="" disabled selected hidden><%= theplant.Care_Level %></option>
+        <option value="Hard">Hard</option>
+        <option value="Medium">Medium</option>
+        <option value="Easy">Easy</option>
+      </select> </br>
+      Environment type: 
+      <select name="Environment" id="Environment">
+        <option value="" disabled selected hidden><%= theplant.Environment %></option>
+        <option value="Indoor">Indoor</option>
+        <option value="Outdoor">Outdoor</option>
+        <option value="Both">Both</option>
+      </select> </br>
+      Water type: 
+      <select name="Water" id="Water">
+        <option value="" disabled selected hidden><%= theplant.Water %></option>
+        <option value="Distilled">Distilled water</option>
+        <option value="Tap">Tap water</option>
+      </select> </br> 
+      Light type:
+      <select name="Light" id="Light">
+        <option value="" disabled selected hidden><%= theplant.Light %></option>
+        <option value="High">High</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Low">Low</option>
+      </select> </br>
+      Plant Size:  
+      <select name="Plant_Size" id="Plant_Size">
+        <option value="" disabled selected hidden><%= theplant.Plant_Size %></option>
+        <option value="Large">Large</option>
+        <option value="Medium">Medium</option>
+        <option value="Small">Small</option>
+      </select> </br>
+      Price: <input type="number" name="Price" id="Price" value="<%= theplant.Price %>" /> </br> 
+      Plant Type: 
+      <select name="Plant_Type" id="Plant_Type">
+        <option value="" disabled selected hidden><%= theplant.Price %></option>
+        <option value="Annual">Annual</option>
+        <option value="Perennial">Perennial</option>
+        <option value="Biennial">Biennial</option>
+      </select> </br>
+      Edible: 
+      <select name="Edible" id="Edible">
+        <option value="" disabled selected hidden><%= theplant.Edible %></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select> </br>
+      Fruit Bearing: 
+      <select name="Fruit_Bearing" id="Fruit_Bearing">
+        <option value="" disabled selected hidden><%= theplant.Fruit_Bearing %></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select> </br>
+      Quantity: <input type="text" name="Quantity" id="Quantity" value="<%= theplant.Quantity %> "/> </br>
+      <input type="submit">
+  </form>
+</body>
+</html>

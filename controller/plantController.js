@@ -82,5 +82,62 @@ module.exports={
             if (err) throw err;
             res.redirect('/');
         })
+    },
+    
+    DeleteById:function(req, res){
+        console.log('Deleting the row');
+        Plant.deleteOne({Plant_Id : req.params.id}, function(err, result){
+            if (err) throw err;
+            res.redirect('/');
+        });
+        console.log("The row which is being deleted: %s", {Plant_Id : req.params.id})
+    },
+
+    GetupdateId:function(req, res){
+        console.log('Update the row using id');
+        Plant.findOne({Plant_Id : req.params.id}, function(err, results){
+            if(err) throw err;
+            //Renders the list of all Plants in the index.ejs file
+            res.render('updateplant.ejs',{theplant:results});
+        });
+        console.log("The id is %s", {Plant_Id : req.params.id})
+    },
+
+    UpdateElement:function(req, res){
+
+        console.log('updating the row');
+
+        var plantUpdate= req.body;
+
+        plantUpdate = {
+            "Plant_Name":req.body.Plant_Name,
+            "Description":req.body.Description,
+            "Care_Level":req.body.Care_Level,
+            "Environment":req.body.Environment,
+            "Water":req.body.Water,
+            "Light":req.body.Light,
+            "Plant_Size":req.body.Plant_Size,
+            "Price":req.body.Price,
+            "Plant_Type":req.body.Plant_Type,
+            "Edible":req.body.Edible,
+            "Fruit_Bearing":req.body.Fruit_Bearing,
+            "Quantity":req.body.Quantity
+        }
+
+        
+
+
+        Plant.findOneAndUpdate({Plant_Id : req.params.id}, function(err, results){
+            
+            if(err) throw err;
+
+            $inc:{plantUpdate};
+
+        });
+
     }
+
+    
+
+   
 }

@@ -55,8 +55,16 @@
             <%=alltheplants[i].Plant_Type %> &nbsp; 
             <%=alltheplants[i].Edible %> &nbsp; 
             <%=alltheplants[i].Fruit_Bearing %> &nbsp; 
-            <%=alltheplants[i].Quantity %> &nbsp; <br>
+            <%=alltheplants[i].Quantity %> &nbsp; 
+            <a href = "/plant/updating/<%=alltheplants[i].Plant_Id %>">
+                <input type="button" value="Update">&nbsp;
+            </a>
+            <a href = "/plant/delete/<%=alltheplants[i].Plant_Id %>">
+                <input type="button" value="Delete"> &nbsp;<br>
+            </a>
         <% } %>
+        <br>
+        <br>
     </section>
     <a href="/add">
         <input type="button" value="Add plant">
