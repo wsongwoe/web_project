@@ -12,6 +12,7 @@ var app = express();
 
 //To call for the bodyParser
 app.use(bodyParser.urlencoded({extended:true}));
+
 //Make all the format into JSON
 app.use(bodyParser.json());
 
@@ -35,6 +36,7 @@ db.once('open',function(){
 
 //Create variable for the plantController and its path
 var plantController = require('./controller/plantController');
+const exp = require('constants');
 
 //Function to get all the details of the plant
 app.get('/',plantController.GetAll);
