@@ -6,6 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update the plant</title>
+    <script>
+       function validateForm() {
+        let id = document.forms["plantForm"]["Plant_Id"].value;
+        let name = document.forms["plantForm"]["Plant_Name"].value;
+        let description = document.forms["plantForm"]["Description"].value;
+        let price = document.forms["plantForm"]["Price"].value;
+        let quantity = document.forms["plantForm"]["Quantity"].value;
+        
+        if (id == "") {
+          alert("Id should be filled out");
+          return false;
+        }
+        if (name == "") {
+          alert("Plant name should be filled out");
+          return false;
+        }
+
+        if (description == "") {
+          alert("Description should be filled out");
+          return false;
+        }
+
+        if (price == "") {
+          alert("Price should be filled out");
+          return false;
+        }
+
+        if (quantity == "") {
+          alert("Quantity should be filled out");
+          return false;
+        }
+      }
+    </script>
 </head>
 <body>
   <h1>Update Plants</h1>  
