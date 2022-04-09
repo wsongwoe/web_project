@@ -10,9 +10,9 @@
 <body>
   <h1>Add Plants</h1>  
   <form action="/plant/add" method="POST">
-      Plant Id: <input type="text" name="Plant_Id" id="Plant_Id" /> </br>
-      Plant Name:<input type="text" name="Plant_Name" id="Plant_Name" /> </br>
-      Description: <input type="text" name="Description" id="Description" /> </br>
+      Plant Id: <input type="text" name="Plant_Id" id="Plant_Id" required="invalid" /> </br>
+      Plant Name:<input type="text" name="Plant_Name" id="Plant_Name" required="invalid"  /> </br>
+      Description: <input type="text" name="Description" id="Description" required="invalid" /> </br>
       Care Level:  
       <select name="Care_Level" id="Care_Level">
         <option value="hard">Hard</option>
