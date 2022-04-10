@@ -56,6 +56,18 @@ module.exports={
         res.render('index.ejs',{alltheplants:results});
             });
     },
+    GetCustomSearch:function(req,res){
+        console.log("Custom Search");
+        Plant.find({ $or:[
+            {'Plant_Name':req.query.Plant_Name}, 
+            {'Plant_Size':req.query.Plant_Size},
+            {'Plant_Type':req.query.Plant_Type},
+            {'Environment':req.query.Environment}]}
+            ,function(err,results){
+                if(err) throw err;
+                res.render('index.ejs',{alltheplants:results});
+        });
+    },
     //Create function to add plants
     Create:function(req,res){
         console.log("Add Plants Details");
@@ -127,14 +139,13 @@ module.exports={
         
 
 
-        Plant.findOneAndUpdate({Plant_Id : req.params.id}, function(err, results){
+        Plant.findOneAndUpdate({Plant_Id : req.params.id}, plantUpdate, function(err, results){
             
             if(err) throw err;
-
-            $inc:{plantUpdate};
+            res.redirect('/')
+            //$inc:{plantUpdate};
 
         });
-
     }
 
     
