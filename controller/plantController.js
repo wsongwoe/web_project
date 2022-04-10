@@ -127,11 +127,11 @@ module.exports={
         
 
 
-        Plant.findOneAndUpdate({Plant_Id : req.params.id}, function(err, results){
+        Plant.findOneAndUpdate({Plant_Id : req.params.id}, plantUpdate, function(err, results){
             
             if(err) throw err;
-
-            $inc:{plantUpdate};
+            res.redirect('/')
+            //$inc:{plantUpdate};
 
         });
 
