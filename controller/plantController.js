@@ -83,7 +83,7 @@ module.exports={
             res.redirect('/');
         })
     },
-    
+
     DeleteById:function(req, res){
         console.log('Deleting the row');
         Plant.deleteOne({Plant_Id : req.params.id}, function(err, result){

@@ -11,7 +11,6 @@ var bodyParser = require('body-parser');
 var app = express();
 
 
-
 //To call for the bodyParser
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -21,6 +20,10 @@ app.use(bodyParser.json());
 //Setup the views folder
 app.set('views', path.join(__dirname, 'view'));
 app.set('views engine', 'ejs');
+
+//Static Files for CSS
+app.use(express.static('public'))
+app.use('/img',express.static(__dirname + "public/img"));
 
 //Url of mongoose connection
 require('./models/plantmodel');
@@ -51,7 +54,7 @@ app.get('/plants/size',plantController.GetBySize);
 //Function to add plant
 app.post('/plant/add', plantController.Create);
 
-app.delete('/plant/delete/:id', plantController.DeleteById);
+app.get('/plant/delete/:id', plantController.DeleteById);
 app.get('/plant/updating/:id', plantController.GetupdateId);
 app.post('/plant/update/:id', plantController.UpdateElement);
 

@@ -8,21 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add</title>
   <script>
+    //Charles- Change the validation
     function validateForm() {
-      let id = document.forms["plantForm"]["Plant_Id"].value;
-      let name = document.forms["plantForm"]["Plant_Name"].value;
-      let description = document.forms["plantForm"]["Description"].value;
-      let price = document.forms["plantForm"]["Price"].value;
-      let quantity = document.forms["plantForm"]["Quantity"].value;
+      let id = document.getElementById("Plant_Id").value;
+      let name = document.getElementById("Plant_Name").value;
+      let description = document.getElementById("Description").value;
+      let price = document.getElementById("Price").value;
+      let quantity = document.getElementById("Quantity").value;
 
-      if (id == "") {
+      if (id == "") 
+      {
         alert("Id should be filled out");
         return false;
       }
-      if(isNaN(id)){
-        alert("Id should be a number");
-        return false;
-      }
+
       if (name == "") {
         alert("Plant name should be filled out");
         return false;
@@ -37,25 +36,18 @@
         alert("Price should be filled out");
         return false;
       }
-      if(isNaN(price)){
-        alert("price should be a number");
-        return false;
-      }
 
       if (quantity == "") {
         alert("Quantity should be filled out");
         return false;
       }
-
-      if(isNaN(quantity)){
-        alert("quantity should be a number");
-        return false;
-      }
+      alert("Successfully Submitted");
+        var x = document.getElementsByTagName("form");
+        x[0].submit(); 
     }
   </script>
   <style>
-
-  
+    /*Charles Change the border color, added input[type=number]*/
     body {
       font-family: arial, sans-serif;
       font-size: 15px;
@@ -67,14 +59,26 @@
       padding: 12px 20px;
       margin: 8px 0;
       display: inline-block;
-      border: 1px solid #ccc;
+      border: 1px solid rgb(10, 10, 10);
       border-radius: 4px;
       box-sizing: border-box;
     }
 
-    input[type=submit] {
+    input[type=number],
+    select {
       width: 100%;
-      background-color: #4CAF50;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid rgb(10, 10, 10);
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+
+    button{
+      width: 100%;
+      background-color: black;
       color: white;
       padding: 14px 20px;
       margin: 8px 0;
@@ -83,7 +87,7 @@
       cursor: pointer;
     }
 
-    input[type=submit]:hover {
+    button:hover {
       background-color: #45a049;
     }
 
@@ -99,62 +103,64 @@
 <body>
   <h1>Add Plants Form</h1>
   <div>
-  <form name="plantForm" action="/plant/add" method="POST" onsubmit=" return validateForm()">
-    <label>Plant Id:</label> <input type="text" name="Plant_Id" id="Plant_Id" /> </br>
+    <!--Charles-> remove the onsubmit change to button onclick and make plant id to number and quantity
+    Made the values to capital for care level, env, size, water, light, type-->
+  <form name="plantForm" action="/plant/add" method="POST">
+    <label>Plant Id:</label> <input type="number" name="Plant_Id" id="Plant_Id" /> </br>
       <label>Plant Name:</label><input type="text" name="Plant_Name" id="Plant_Name" /> </br>
         <label>Description:</label> <input type="text" name="Description" id="Description" /> </br>
           <label>Care Level:</label>
     <select name="Care_Level" id="Care_Level">
-      <option value="hard">Hard</option>
-      <option value="medium">Medium</option>
-      <option value="easy">Easy</option>
+      <option value="Hard">Hard</option>
+      <option value="Medium">Medium</option>
+      <option value="Easy">Easy</option>
     </select> </br>
     <label>Environment type:</label>
     <select name="Environment" id="Environment">
-      <option value="indoor">Indoor</option>
-      <option value="outdoor">Outdoor</option>
-      <option value="both">Both</option>
+      <option value="Indoor">Indoor</option>
+      <option value="Outdoor">Outdoor</option>
+      <option value="Both">Both</option>
     </select> </br>
     <label>Water type:</label>
     <select name="Water" id="Water">
-      <option value="distilled">Distilled water</option>
-      <option value="tap">Tap water</option>
+      <option value="Distilled">Distilled water</option>
+      <option value="Tap">Tap water</option>
     </select> </br>
     <label>Light type:</label>
     <select name="Light" id="Light">
-      <option value="high">High</option>
-      <option value="moderate">Moderate</option>
-      <option value="low">Low</option>
+      <option value="High">High</option>
+      <option value="Moderate">Moderate</option>
+      <option value="Low">Low</option>
     </select> </br>
     <label>Plant Size:</label>
     <select name="Plant_Size" id="Plant_Size">
-      <option value="large">Large</option>
-      <option value="medium">Medium</option>
-      <option value="small">Small</option>
+      <option value="Large">Large</option>
+      <option value="Medium">Medium</option>
+      <option value="Small">Small</option>
     </select> </br>
     <label>Price: </label>
-    <input type="text" name="Price" id="Price" /> </br>
+    <input type="number" name="Price" id="Price" /> </br>
     <label>Plant Type:</label>
     <select name="Plant_Type" id="Plant_Type">
-      <option value="annual">Annual</option>
-      <option value="perennial">Perennial</option>
-      <option value="biennial">Biennial</option>
+      <option value="Annual">Annual</option>
+      <option value="Perennial">Perennial</option>
+      <option value="Biennial">Biennial</option>
     </select> </br>
     <label>Edible:</label>
     <select name="Edible" id="Edible">
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
     </select> </br>
     <label>Fruit Bearing:</label>
     <select name="Fruit_Bearing" id="Fruit_Bearing">
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
     </select> </br>
-    <label>Quantity:</label><input type="text" name="Quantity" id="Quantity" /> </br>
-    <input type="submit">
-  
+    <label>Quantity:</label><input type="number" name="Quantity" id="Quantity" /> </br>
+    <!--Charles Input Val-->
+    <button type="button" onclick="validateForm()">Submit</button> 
+
   </form>
   </div>
 </body>
-
 </html>

@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 
 //Model or Table structure of Plant
 var plantsSchema = new mongoose.Schema({
-    Plant_Id: {type:String},
+    Plant_Id: {type:Number},
     Plant_Name: {type:String},
     Description: {type:String},
     Care_Level: {type:String}, 
@@ -12,7 +12,7 @@ var plantsSchema = new mongoose.Schema({
     Water: {type:String},
     Light: {type:String},
     Plant_Size: {type:String},
-    Price: {type:String},
+    Price: {type:Number},
     Plant_Type: {type:String},
     Edible: {type:String},
     Fruit_Bearing: {type:String},
