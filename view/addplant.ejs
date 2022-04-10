@@ -16,8 +16,7 @@
       let price = document.getElementById("Price").value;
       let quantity = document.getElementById("Quantity").value;
 
-      if (id == "") 
-      {
+      if (id == "") {
         alert("Id should be filled out");
         return false;
       }
@@ -42,8 +41,8 @@
         return false;
       }
       alert("Successfully Submitted");
-        var x = document.getElementsByTagName("form");
-        x[0].submit(); 
+      var x = document.getElementsByTagName("form");
+      x[0].submit();
     }
   </script>
   <style>
@@ -76,7 +75,7 @@
     }
 
 
-    button{
+    button {
       width: 100%;
       background-color: black;
       color: white;
@@ -105,62 +104,63 @@
   <div>
     <!--Charles-> remove the onsubmit change to button onclick and make plant id to number and quantity
     Made the values to capital for care level, env, size, water, light, type-->
-  <form name="plantForm" action="/plant/add" method="POST">
-    <label>Plant Id:</label> <input type="number" name="Plant_Id" id="Plant_Id" /> </br>
+    <form name="plantForm" action="/plant/add" method="POST">
+      <label>Plant Id:</label> <input type="number" name="Plant_Id" id="Plant_Id" /> </br>
       <label>Plant Name:</label><input type="text" name="Plant_Name" id="Plant_Name" /> </br>
-        <label>Description:</label> <input type="text" name="Description" id="Description" /> </br>
-          <label>Care Level:</label>
-    <select name="Care_Level" id="Care_Level">
-      <option value="Hard">Hard</option>
-      <option value="Medium">Medium</option>
-      <option value="Easy">Easy</option>
-    </select> </br>
-    <label>Environment type:</label>
-    <select name="Environment" id="Environment">
-      <option value="Indoor">Indoor</option>
-      <option value="Outdoor">Outdoor</option>
-      <option value="Both">Both</option>
-    </select> </br>
-    <label>Water type:</label>
-    <select name="Water" id="Water">
-      <option value="Distilled">Distilled water</option>
-      <option value="Tap">Tap water</option>
-    </select> </br>
-    <label>Light type:</label>
-    <select name="Light" id="Light">
-      <option value="High">High</option>
-      <option value="Moderate">Moderate</option>
-      <option value="Low">Low</option>
-    </select> </br>
-    <label>Plant Size:</label>
-    <select name="Plant_Size" id="Plant_Size">
-      <option value="Large">Large</option>
-      <option value="Medium">Medium</option>
-      <option value="Small">Small</option>
-    </select> </br>
-    <label>Price: </label>
-    <input type="number" name="Price" id="Price" /> </br>
-    <label>Plant Type:</label>
-    <select name="Plant_Type" id="Plant_Type">
-      <option value="Annual">Annual</option>
-      <option value="Perennial">Perennial</option>
-      <option value="Biennial">Biennial</option>
-    </select> </br>
-    <label>Edible:</label>
-    <select name="Edible" id="Edible">
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select> </br>
-    <label>Fruit Bearing:</label>
-    <select name="Fruit_Bearing" id="Fruit_Bearing">
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select> </br>
-    <label>Quantity:</label><input type="number" name="Quantity" id="Quantity" /> </br>
-    <!--Charles Input Val-->
-    <button type="button" onclick="validateForm()">Submit</button> 
+      <label>Description:</label> <input type="text" name="Description" id="Description" /> </br>
+      <label>Care Level:</label>
+      <select name="Care_Level" id="Care_Level">
+        <option value="Hard">Hard</option>
+        <option value="Medium">Medium</option>
+        <option value="Easy">Easy</option>
+      </select> </br>
+      <label>Environment type:</label>
+      <select name="Environment" id="Environment">
+        <option value="Indoor">Indoor</option>
+        <option value="Outdoor">Outdoor</option>
+        <option value="Both">Both</option>
+      </select> </br>
+      <label>Water type:</label>
+      <select name="Water" id="Water">
+        <option value="Distilled">Distilled water</option>
+        <option value="Tap">Tap water</option>
+      </select> </br>
+      <label>Light type:</label>
+      <select name="Light" id="Light">
+        <option value="High">High</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Low">Low</option>
+      </select> </br>
+      <label>Plant Size:</label>
+      <select name="Plant_Size" id="Plant_Size">
+        <option value="Large">Large</option>
+        <option value="Medium">Medium</option>
+        <option value="Small">Small</option>
+      </select> </br>
+      <label>Price: </label>
+      <input type="number" name="Price" id="Price" /> </br>
+      <label>Plant Type:</label>
+      <select name="Plant_Type" id="Plant_Type">
+        <option value="Annual">Annual</option>
+        <option value="Perennial">Perennial</option>
+        <option value="Biennial">Biennial</option>
+      </select> </br>
+      <label>Edible:</label>
+      <select name="Edible" id="Edible">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select> </br>
+      <label>Fruit Bearing:</label>
+      <select name="Fruit_Bearing" id="Fruit_Bearing">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select> </br>
+      <label>Quantity:</label><input type="number" name="Quantity" id="Quantity" /> </br>
+      <!--Charles Input Val-->
+      <button type="button" onclick="validateForm()">Submit</button>
 
-  </form>
+    </form>
   </div>
 </body>
+
 </html>
