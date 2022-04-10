@@ -1,73 +1,164 @@
 <!DOCTYPE html>
 <!--Created By: William Charles See Ong | Student Id: C0797740-->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plants</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            font-size: 15px;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        .table_format {
+            width: 72%;
+            float: right;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .main{
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 20px;
+        }
+        
+    </style>
 </head>
+
 <body>
     <h1>Find the best Plants for Me!</h1>
     <form action="/plants/search" method="GET">
-        <input type="text" name="Plant_Name" id="Plant_Name" placeholder="Search for Plants"/>
-        <input type="submit" value="Search The Name of the Plant"/>
+        <input type="text" name="Plant_Name" id="Plant_Name" placeholder="Search for Plants" />
+        <input type="submit" value="Search The Name of the Plant" />
     </form>
     <form action="/plants/id" method="GET">
-        <input type="text" name="Plant_Id" id="Plant_Id" placeholder="Search for Plant id"/>
-        <input type="submit" value="Search The Plant Id"/>
+        <input type="text" name="Plant_Id" id="Plant_Id" placeholder="Search for Plant id" />
+        <input type="submit" value="Search The Plant Id" />
     </form>
     <form action="/plants/type" method="GET">
         <select name="Plant_Type" id="Plant_Type">
-            <option value="Annual">Annual</option>
-            <option value="Perennial">Perennial</option>
-            <option value="Biennial">Biennial</option>
-            </select>
-        <input type="submit" value="Search The Plant Type"/>
-    </form>
-    <form action="/plants/environment" method="GET">
-        <select name="Environment" id="Environment">
-            <option value="Indoor">Indoor</option>
-            <option value="Outdoor">Outdoor</option>
-            <option value="Both">Both</option>
-            </select>
-        <input type="submit" value="Search The Plant Environment"/>
+            <option value="annual">Annual</option>
+            <option value="perennial">Perennial</option>
+            <option value="biennial">Biennial</option>
+        </select>
+        <input type="submit" value="Search The Plant Type" />
     </form>
     <form action="/plants/size" method="GET">
         <select name="Plant_Size" id="Plant_Size">
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-            </select> 
-        <input type="submit" value="Search The Plant Size"/>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <input type="submit" value="Search The Plant Size" />
     </form>
-    <h2>List of the Plants:</h2>
-    <section data-position= 'plant'>
-        <% for(var i=0; i<alltheplants.length; i++) { %>
-            <%=alltheplants[i].Plant_Id %> &nbsp;
-            <%=alltheplants[i].Plant_Name %> &nbsp;
-            <%=alltheplants[i].Description %> &nbsp; 
-            <%=alltheplants[i].Care_Level %> &nbsp;
-            <%=alltheplants[i].Environment %> &nbsp;
-            <%=alltheplants[i].Water %> &nbsp;
-            <%=alltheplants[i].Light %> &nbsp;
-            <%=alltheplants[i].Plant_Size %> &nbsp;
-            <%=alltheplants[i].Plant_Type %> &nbsp; 
-            <%=alltheplants[i].Edible %> &nbsp; 
-            <%=alltheplants[i].Fruit_Bearing %> &nbsp; 
-            <%=alltheplants[i].Quantity %> &nbsp; 
-            <a href = "/plant/updating/<%=alltheplants[i].Plant_Id %>">
-                <input type="button" value="Update">&nbsp;
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="main">
+        <div class="plant_category">
+            <form action="/plants/environment" method="GET">
+                <select name="Environment" id="Environment" >
+                    <option value="indoor">Indoor</option>
+                    <option value="outdoor">Outdoor</option>
+                    <option value="both">Both</option>
+                </select>
+                <input type="submit" value="Search The Plant Environment" />
+            </form>
+        </div>
+        <div class="table_format">
+            <table>
+                <tr>
+                    <th>Plant id</th>
+                    <th>Plant Name</th>
+                    <th>Plant Description</th>
+                    <th>Care level</th>
+                    <th>Environment</th>
+                    <th>Water level</th>
+                    <th>Light level</th>
+                    <th>Plant size</th>
+                    <th>Plant type</th>
+                    <th>Edible</th>
+                    <th>Fruit Bearing</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+                <% for(var i=0; i<alltheplants.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%=alltheplants[i].Plant_Id %> &nbsp;
+                        <td>
+                            <%=alltheplants[i].Plant_Name %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Description %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Care_Level %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Environment %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Water %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Light %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Plant_Size %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Plant_Type %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Edible %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Fruit_Bearing %>
+                        </td>
+                        <td>
+                            <%=alltheplants[i].Quantity %>
+                        </td>
+                        <td> <a href="/plant/updating/<%=alltheplants[i].Plant_Id %>">
+                                <input type="button" value="Update">
+                            </a>
+                            <a href="/plant/delete/<%=alltheplants[i].Plant_Id %>">
+                                <input type="button" value="Delete">
+                            </a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+            <br>
+            <br>
+            <a href="/add">
+                <input type="button" value="Add plant">
             </a>
-            <a href = "/plant/delete/<%=alltheplants[i].Plant_Id %>">
-                <input type="button" value="Delete"> &nbsp;<br>
-            </a>
-        <% } %>
-        <br>
-        <br>
-    </section>
-    <a href="/add">
-        <input type="button" value="Add plant">
-    </a>
+        </div>
+    </div>
 </body>
+
 </html>

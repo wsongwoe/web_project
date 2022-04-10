@@ -1,99 +1,159 @@
 <!DOCTYPE html>
 <!--Created By: William Charles See Ong | Student Id: C0797740-->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add</title>
-    <script>
-      function validateForm() {
-       let id = document.forms["plantForm"]["Plant_Id"].value;
-       let name = document.forms["plantForm"]["Plant_Name"].value;
-       let description = document.forms["plantForm"]["Description"].value;
-       let price = document.forms["plantForm"]["Price"].value;
-       let quantity = document.forms["plantForm"]["Quantity"].value;
-       
-       if (id == "") {
-         alert("Id should be filled out");
-         return false;
-       }
-       if (name == "") {
-         alert("Plant name should be filled out");
-         return false;
-       }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add</title>
+  <script>
+    function validateForm() {
+      let id = document.forms["plantForm"]["Plant_Id"].value;
+      let name = document.forms["plantForm"]["Plant_Name"].value;
+      let description = document.forms["plantForm"]["Description"].value;
+      let price = document.forms["plantForm"]["Price"].value;
+      let quantity = document.forms["plantForm"]["Quantity"].value;
 
-       if (description == "") {
-         alert("Description should be filled out");
-         return false;
-       }
+      if (id == "") {
+        alert("Id should be filled out");
+        return false;
+      }
+      if(isNaN(id)){
+        alert("Id should be a number");
+        return false;
+      }
+      if (name == "") {
+        alert("Plant name should be filled out");
+        return false;
+      }
 
-       if (price == "") {
-         alert("Price should be filled out");
-         return false;
-       }
+      if (description == "") {
+        alert("Description should be filled out");
+        return false;
+      }
 
-       if (quantity == "") {
-         alert("Quantity should be filled out");
-         return false;
-       }
-     }
-   </script>
+      if (price == "") {
+        alert("Price should be filled out");
+        return false;
+      }
+      if(isNaN(price)){
+        alert("price should be a number");
+        return false;
+      }
+
+      if (quantity == "") {
+        alert("Quantity should be filled out");
+        return false;
+      }
+
+      if(isNaN(quantity)){
+        alert("quantity should be a number");
+        return false;
+      }
+    }
+  </script>
+  <style>
+
+  
+    body {
+      font-family: arial, sans-serif;
+      font-size: 15px;
+    }
+
+    input[type=text],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      width: 50%;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Add Plants</h1>  
-  <form action="/plant/add" method="POST">
-      Plant Id: <input type="text" name="Plant_Id" id="Plant_Id" /> </br>
-      Plant Name:<input type="text" name="Plant_Name" id="Plant_Name" /> </br>
-      Description: <input type="text" name="Description" id="Description" /> </br>
-      Care Level:  
-      <select name="Care_Level" id="Care_Level">
-        <option value="hard">Hard</option>
-        <option value="medium">Medium</option>
-        <option value="easy">Easy</option>
-      </select> </br>
-      Environment type: 
-      <select name="Environment" id="Environment">
-        <option value="indoor">Indoor</option>
-        <option value="outdoor">Outdoor</option>
-        <option value="both">Both</option>
-      </select> </br>
-      Water type: 
-      <select name="Water" id="Water">
-        <option value="distilled">Distilled water</option>
-        <option value="tap">Tap water</option>
-      </select> </br> 
-      Light type:
-      <select name="Light" id="Light">
-        <option value="high">High</option>
-        <option value="moderate">Moderate</option>
-        <option value="low">Low</option>
-      </select> </br>
-      Plant Size:  
-      <select name="Plant_Size" id="Plant_Size">
-        <option value="large">Large</option>
-        <option value="medium">Medium</option>
-        <option value="small">Small</option>
-      </select> </br>
-      Price: <input type="number" name="Price" id="Price" /> </br> 
-      Plant Type: 
-      <select name="Plant_Type" id="Plant_Type">
-        <option value="annual">Annual</option>
-        <option value="perennial">Perennial</option>
-        <option value="biennial">Biennial</option>
-      </select> </br>
-      Edible: 
-      <select name="Edible" id="Edible">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select> </br>
-      Fruit Bearing: 
-      <select name="Fruit_Bearing" id="Fruit_Bearing">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select> </br>
-      Quantity: <input type="text" name="Quantity" id="Quantity" /> </br>
-      <input type="submit">
+  <h1>Add Plants Form</h1>
+  <div>
+  <form name="plantForm" action="/plant/add" method="POST" onsubmit=" return validateForm()">
+    <label>Plant Id:</label> <input type="text" name="Plant_Id" id="Plant_Id" /> </br>
+      <label>Plant Name:</label><input type="text" name="Plant_Name" id="Plant_Name" /> </br>
+        <label>Description:</label> <input type="text" name="Description" id="Description" /> </br>
+          <label>Care Level:</label>
+    <select name="Care_Level" id="Care_Level">
+      <option value="hard">Hard</option>
+      <option value="medium">Medium</option>
+      <option value="easy">Easy</option>
+    </select> </br>
+    <label>Environment type:</label>
+    <select name="Environment" id="Environment">
+      <option value="indoor">Indoor</option>
+      <option value="outdoor">Outdoor</option>
+      <option value="both">Both</option>
+    </select> </br>
+    <label>Water type:</label>
+    <select name="Water" id="Water">
+      <option value="distilled">Distilled water</option>
+      <option value="tap">Tap water</option>
+    </select> </br>
+    <label>Light type:</label>
+    <select name="Light" id="Light">
+      <option value="high">High</option>
+      <option value="moderate">Moderate</option>
+      <option value="low">Low</option>
+    </select> </br>
+    <label>Plant Size:</label>
+    <select name="Plant_Size" id="Plant_Size">
+      <option value="large">Large</option>
+      <option value="medium">Medium</option>
+      <option value="small">Small</option>
+    </select> </br>
+    <label>Price: </label>
+    <input type="text" name="Price" id="Price" /> </br>
+    <label>Plant Type:</label>
+    <select name="Plant_Type" id="Plant_Type">
+      <option value="annual">Annual</option>
+      <option value="perennial">Perennial</option>
+      <option value="biennial">Biennial</option>
+    </select> </br>
+    <label>Edible:</label>
+    <select name="Edible" id="Edible">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select> </br>
+    <label>Fruit Bearing:</label>
+    <select name="Fruit_Bearing" id="Fruit_Bearing">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select> </br>
+    <label>Quantity:</label><input type="text" name="Quantity" id="Quantity" /> </br>
+    <input type="submit">
   </form>
+  </div>
 </body>
+
 </html>
