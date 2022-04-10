@@ -1,0 +1,209 @@
+.mainDiv {
+    /* border: 6px solid black; */
+    font-size: 14px;
+    margin-top: 2%;
+    max-height: 80vh;
+    height: 100vh;
+}
+
+.ovalDiv {
+    text-align: center;
+    font-weight: bold;
+    border: 6px solid black;
+    border-radius: 100%;
+    height: 30%;
+    width: 50%;
+    margin-top: 5%;
+    position: relative;
+}
+.ovalDivText {
+    position: absolute;
+    left: 18%;
+    top: 33%;
+}
+
+.categoryDiv {
+    margin-top: 25%;
+    position: relative;
+    margin-bottom: 25%;
+}
+
+.heading {
+    font-size: 14px;
+    font-weight: bold;
+    border: 6px solid black;
+    max-height: 30%;
+    width: 50%;
+    height: 20%;
+}
+
+.inputCls {
+    margin-top: 5%;
+    position: relative;
+    width: 100%;
+}
+input {
+    border: 6px solid black;
+    width: 60%;
+    position: absolute;
+    padding-left: 2%;
+}
+
+.detailsDiv {
+    position: relative;
+    top: 45%;
+}
+.table {
+    font-weight: bold;
+    font-size: 13px;
+}
+.table-bordered {
+    border: 6px solid black;
+}
+
+.table-bordered thead th {
+    border: 6px solid black;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 6px solid black;
+}
+
+.addBtnCls {
+    width: 50%;
+    position: relative;
+    top: 4%;
+}
+
+.addCls {
+    position: absolute;
+    width: 100%;
+    font-size: 12px;
+    border: 6px solid black;
+}
+
+.btnCls {
+    position: absolute;
+    width: 40%;
+    font-size: 12px;
+    border: 6px solid black;
+    left: 26%;
+}
+
+.formDiv {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    top: 20%;
+}
+
+.formD {
+    position: absolute;
+    width: 86%;
+    left: 15%;
+}
+
+
+.addFormInput {
+    border: 6px solid black;
+    width: 40%;
+    padding-left: 2%;
+    position: static;
+}
+
+.spanCls {
+    display: inline-block;
+    width: 13%;
+    font-weight: bold;
+}
+
+.marginBtm {
+    margin-bottom: 3%;
+}
+
+.errMsg {
+    position: absolute;
+    left: 32%;
+    font-size: 15px;
+    color: red;
+    font-weight: bold;
+}
+
+.successMsg {
+    position: absolute;
+    left: 32%;
+    font-size: 15px;
+    color: green;
+    font-weight: bold;
+}
+
+.scrollCls {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 20vh;
+}
+
+.active {
+    background-color: rgb(179, 228, 179);
+}
+
+.notAllowed {
+    cursor: no-drop;
+}
+
+.divTableHeading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.borderRight {
+    border-right: 6px solid black;
+}
+
+.borderLeft {
+    border-left: 6px solid black;
+}
+
+.borderBottom {
+    border-bottom: 6px solid black;
+}
+
+.idWidth {
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.plantNameWidth {
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.plantTypeWidth {
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.btnWidth {
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.paddingHeaders {
+    padding: 2vh 2vw;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.heightCls {
+    height: 7vh;
+    max-height: 12vh;
+}
