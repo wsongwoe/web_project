@@ -119,7 +119,7 @@
                 <% for(var i=0; i<alltheplants.length; i++) { %>
                     <tr>
                         <td>
-                            <%=alltheplants[i].Plant_Id %> &nbsp;
+                            <%=alltheplants[i].id %> &nbsp;
                         <td>
                             <%=alltheplants[i].Plant_Name %>
                         </td>
@@ -158,10 +158,10 @@
                         <td>
                             <%=alltheplants[i].Quantity %>
                         </td>
-                        <td> <a href="/plant/updating/<%=alltheplants[i].Plant_Id %>">
+                        <td> <a href="/plant/updating/<%=alltheplants[i].id %>">
                                 <input type="button" value="Update">
                             </a>
-                            <a href="/plant/delete/<%=alltheplants[i].Plant_Id %>">
+                            <a href="/plant/delete/<%=alltheplants[i].id %>">
                                 <input type="button" value="Delete">
                             </a>
                         </td>

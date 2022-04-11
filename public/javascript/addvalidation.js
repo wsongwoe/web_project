@@ -7,7 +7,6 @@
 
 function validateForm() {
 
-  let pid = document.getElementById("Plant_Id").value;
   let name = document.getElementById("Plant_Name").value;
   let description = document.getElementById("Description").value;
   let price = document.getElementById("Price").value;
@@ -17,11 +16,7 @@ function validateForm() {
   //if input plant name is blank alert pls fill out
 
 
-  if (pid == "") {
-    alert("Plant Id should be filled out");
-    //Return False to Wont Submit
-    return false;
-  }
+  
 
   if (name == "") {
     //Show Alert on Page
