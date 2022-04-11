@@ -38,25 +38,25 @@
             background-color: #dddddd;
         }
 
-        .main{
+        .main {
             display: grid;
             grid-template-columns: auto auto;
             padding: 20px;
         }
+
         /* Charles */
         h1 {
             text-align: center;
         }
 
-        .searchforms{
+        .searchforms {
             text-align: center;
         }
 
-        img{
-            float:left;
+        img {
+            float: left;
             width: 150px;
         }
-
     </style>
 </head>
 
@@ -65,26 +65,24 @@
     Made the values to capital for care level, env, size, water, light, type-->
     <h1>Find the best Plants for Me!</h1>
     <!--Added Div Charles-->
-    <img src="/img/AMC_Nursery.jpg" alt="Logo"> 
+    <img src="/img/AMC_Nursery.jpg" alt="Logo">
     <div class="searchforms">
-    <form action="/plants/search" method="GET">
-        <input type="text" name="Plant_Name" id="Plant_Name" placeholder="Enter Plant Name"  size="50"/>
-        <select name="Plant_Type" id="Plant_Type">
-            <option value="Annual">Annual</option>
-            <option value="Perennial">Perennial</option>
-            <option value="Biennial">Biennial</option>
-        </select>
-        <select name="Plant_Size" id="Plant_Size">
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-        </select>
-        <select name="Environment" id="Environment" >
-            <option value="Indoor">Indoor</option>
-            <option value="Outdoor">Outdoor</option>
-            <option value="Both">Both</option>
-        </select>
-        <input type="submit" value="Search Plant" />
+        <form action="/plants/search" method="GET">
+            <input type="text" name="Plant_Name" id="Plant_Name" placeholder="Enter Plant Name" size="50" />
+            <select name="Plant_Size" id="Plant_Size">
+                <option value="" disabled selected hidden>Size</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+            <select name="Plant_Type" id="Plant_Type">
+                <option value="" disabled selected hidden>Plant Type</option>
+                <option value="Annual">Annual</option>
+                <option value="Perennial">Perennial</option>
+                <option value="Biennial">Biennial</option>
+            </select>
+            <input type="submit" value="Search Plant" />
+        </form>
     </div>
     <br>
     <br>
@@ -93,7 +91,7 @@
     <div class="main">
         <div class="plant_category">
             <form action="/plants/environment" method="GET">
-                <select name="Environment" id="Environment" >
+                <select name="Environment" id="Environment">
                     <option value="Indoor">Indoor</option>
                     <option value="Outdoor">Outdoor</option>
                     <option value="Both">Both</option>

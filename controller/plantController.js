@@ -58,12 +58,14 @@ module.exports={
     },
     GetCustomSearch:function(req,res){
         console.log("Custom Search");
+        console.log({'Plant_Name':req.query.Plant_Name});
+        console.log({'Plant_Size':req.query.Plant_Size});
+        console.log({'Plant_Type':req.query.Plant_Type});
+        console.log({'Environment':req.query.Environment});
         Plant.find({ $or:[
             {'Plant_Name':req.query.Plant_Name}, 
             {'Plant_Size':req.query.Plant_Size},
-            {'Plant_Type':req.query.Plant_Type},
-            {'Environment':req.query.Environment}]}
-            ,function(err,results){
+            {'Plant_Type':req.query.Plant_Type}]},function(err,results){
                 if(err) throw err;
                 res.render('index.ejs',{alltheplants:results});
         });
@@ -142,7 +144,7 @@ module.exports={
         Plant.findOneAndUpdate({Plant_Id : req.params.id}, plantUpdate, function(err, results){
             
             if(err) throw err;
-            res.redirect('/')
+            res.redirect(303, '/')
             //$inc:{plantUpdate};
 
         });
