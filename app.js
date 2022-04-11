@@ -1,4 +1,4 @@
-//Created By: William Charles See Ong | Student Id: C0797740
+//Created By: William Charles See Ong C0797740, Ashray Pujari C0800447, Maria Theresa Corre C0784534, Amulya Baddam C0796372
 //Declare variable express to connect express js
 var express = require('express');
 //Declare variable mongoose to connect to mongoose
@@ -21,9 +21,10 @@ app.use(bodyParser.json());
 app.set('views', path.join(__dirname, 'view'));
 app.set('views engine', 'ejs');
 
-//Static Files for CSS
+//Static Files for CSS and Image
 app.use(express.static('public'))
 app.use('/img',express.static(__dirname + "public/img"));
+app.use('/css',express.static(__dirname + "public/css"));
 
 //Url of mongoose connection
 require('./models/plantmodel');
@@ -41,11 +42,12 @@ db.once('open',function(){
 
 //Create variable for the plantController and its path
 var plantController = require('./controller/plantController');
+//Constant exp variable
 const exp = require('constants');
 
 //Function to get all the details of the plant
 app.get('/',plantController.GetAll);
-//Function to get all the details of the plant
+//Function to get all the details of the plant such as Id, type, environment and size
 app.get('/plants/search',plantController.GetCustomSearch);
 app.get('/plants/id',plantController.GetById);
 app.get('/plants/type',plantController.GetByType);
@@ -53,8 +55,9 @@ app.get('/plants/environment',plantController.GetByEnv);
 app.get('/plants/size',plantController.GetBySize);
 //Function to add plant
 app.post('/plant/add', plantController.Create);
-
+//Function to delete
 app.get('/plant/delete/:id', plantController.DeleteById);
+//Function to update
 app.get('/plant/updating/:id', plantController.GetupdateId);
 app.post('/plant/update/:id', plantController.UpdateElement);
 

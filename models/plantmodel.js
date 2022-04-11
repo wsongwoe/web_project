@@ -1,4 +1,4 @@
-//Created By: William Charles See Ong | Student Id: C0797740
+//Created By: William Charles See Ong C0797740, Ashray Pujari C0800447, Maria Theresa Corre C0784534, Amulya Baddam C0796372
 //Constant Variable to response mongoose
 var mongoose = require('mongoose');
 
@@ -18,5 +18,5 @@ var plantsSchema = new mongoose.Schema({
     Fruit_Bearing: {type:String},
     Quantity: {type:Number}
 });
-
+//Table Plants under PlantSchema
 mongoose.model('plants', plantsSchema);

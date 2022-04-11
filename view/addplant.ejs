@@ -1,100 +1,15 @@
 <!DOCTYPE html>
-<!--Created By: William Charles See Ong | Student Id: C0797740-->
+<!--Created By: William Charles See Ong C0797740, Ashray Pujari C0800447, Maria Theresa Corre C0784534, Amulya Baddam C0796372-->
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/addstyle.css">
+  <script src="javascript/addvalidation.js"></script>
   <title>Add</title>
-  <script>
-    //Charles- Change the validation
-
-    function validateForm() {
-      let name = document.getElementById("Plant_Name").value;
-      let description = document.getElementById("Description").value;
-      let price = document.getElementById("Price").value;
-      let quantity = document.getElementById("Quantity").value;
-
-      if (name == "") {
-        alert("Plant name should be filled out");
-        return false;
-      }
-
-      if (description == "") {
-        alert("Description should be filled out");
-        return false;
-      }
-
-      if (price == "") {
-        alert("Price should be filled out");
-        return false;
-      }
-
-      if (quantity == "") {
-        alert("Quantity should be filled out");
-        return false;
-      }
-      alert("Successfully Submitted");
-      var x = document.getElementsByTagName("form");
-      x[0].submit();
-    }
-    
-  </script>
-  <style>
-    /*Charles Change the border color, added input[type=number]*/
-    body {
-      font-family: arial, sans-serif;
-      font-size: 15px;
-    }
-
-    input[type=text],
-    select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid rgb(10, 10, 10);
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    input[type=number],
-    select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid rgb(10, 10, 10);
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-
-    button {
-      width: 100%;
-      background-color: black;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    div {
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-      width: 50%;
-    }
-  </style>
 </head>
-
 <body>
   <h1>Add Plants Form</h1>
   <div>
@@ -152,7 +67,7 @@
         <option value="No">No</option>
       </select> </br>
       <label>Quantity:</label><input type="number" name="Quantity" id="Quantity" /> </br>
-      <!--Charles Input Val-->
+      <!--Calls Validation Form when submit onclick event-->
       <button type="button" onclick="validateForm()">Submit</button>
     </form>
   </div>

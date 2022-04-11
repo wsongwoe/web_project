@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--Created By: William Charles See Ong | Student Id: C0797740-->
+<!--Created By: William Charles See Ong C0797740, Ashray Pujari C0800447, Maria Theresa Corre C0784534, Amulya Baddam C0796372-->
 <html lang="en">
 
 <head>
@@ -8,44 +8,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Update the plant</title>
   <script>
-    //Charles- Change the validation to onclick
+    //Charles- Change the validation DOM
     function validateForm() {
       let name = document.getElementById("Plant_Name").value;
       let description = document.getElementById("Description").value;
       let price = document.getElementById("Price").value;
       let quantity = document.getElementById("Quantity").value;
-
-      if (name == "") {
+      //if input plant name is blank alert pls fill out
+      if (name == "") 
+      {
+        //Show Alert on Page
         alert("Plant name should be filled out");
+         //Return False to Wont Submit
         return false;
       }
-
-      if (description == "") {
+        //if input plant description is blank alert pls fill out
+      else if (description == "") 
+      {
+        //Show Alert on Page
         alert("Description should be filled out");
+         //Return False to Wont Submit
         return false;
       }
-
-      if (price == "") {
+          //if input plant price is blank alert pls fill out
+      else if (price == "") 
+      {
+        //Show Alert on Page
         alert("Price should be filled out");
+         //Return False to Wont Submit
         return false;
       }
-
-      if (quantity == "") {
+        //if input plant quantity is blank alert pls fill out
+      else if (quantity == "") 
+      {
+        //Show Alert on Page
         alert("Quantity should be filled out");
+         //Return False to Wont Submit
         return false;
       }
+      else
+      //Show Alert on Page For successful
       alert("Successfully Submitted");
       var x = document.getElementsByTagName("form");
+          //Prcoess submit form
       x[0].submit();
     }
   </script>
   <style>
-    /*Charles Change the border color, added input[type=number]*/
+    /*Body color of update*/
     body {
       font-family: arial, sans-serif;
       font-size: 15px;
     }
-
+    /*Change UI of Input Type with Text*/
     input[type=text],
     select {
       width: 100%;
@@ -56,7 +71,7 @@
       border-radius: 4px;
       box-sizing: border-box;
     }
-
+    /*Change UI of Input Type with Number*/
     input[type=number],
     select {
       width: 100%;
@@ -67,7 +82,7 @@
       border-radius: 5px;
       box-sizing: border-box;
     }
-
+    /*Button Color*/
     button {
       width: 100%;
       background-color: black;
@@ -78,11 +93,11 @@
       border-radius: 4px;
       cursor: pointer;
     }
-
+    /*hover button to color green*/
     button:hover {
       background-color: #45a049;
     }
-
+    /*div button to color white for form*/
     div {
       border-radius: 5px;
       background-color: #f2f2f2;
@@ -97,8 +112,7 @@
   <div>
     <!--Charles-> remove the onsubmit change to button onclick and make plant id to number and quantity
     Made the values to capital for care level, env, size, water, light, type-->
-    <form action="/plant/update/<%= theplant.Plant_Id %>" method="POST">
-
+    <form  name="plantForm"  action="/plant/update/<%= theplant.Plant_Id %>" method="POST">
       <label>Plant Name:</label><input type="text" name="Plant_Name" id="Plant_Name"
         value="<%= theplant.Plant_Name %>" /> </br>
       <label>Description:</label><input type="text" name="Description" id="Description"
