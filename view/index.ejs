@@ -164,9 +164,9 @@
                         <td> <a href="/plant/updating/<%=alltheplants[i].Plant_Id %>">
                                 <input type="button" value="Update">
                             </a>
-                            <a href="/plant/delete/<%=alltheplants[i].Plant_Id %>">
-                                <input type="button" value="Delete">
-                            </a>
+                            <form action ="/plant/delete/<%=alltheplants[i].Plant_Id %>" method = 'post'>
+                                <input type="submit" value="Delete">
+                            </form>
                         </td>
                     </tr>
                     <% } %>
