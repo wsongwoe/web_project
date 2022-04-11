@@ -61,7 +61,7 @@ app.get('/plant/delete/:id', plantController.DeleteById);
 app.get('/plant/updating/:id', plantController.GetupdateId);
 app.post('/plant/update/:id', plantController.UpdateElement);
 
-//all the addplant.ejs add funciton
+//all the addplant.ejs add function
 app.get('/add', function(req,res){
     res.render('addplant.ejs');
 })

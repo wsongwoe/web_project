@@ -7,53 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Update the plant</title>
-  <script>
-    //Charles- Change the validation DOM
-    function validateForm() {
-      let name = document.getElementById("Plant_Name").value;
-      let description = document.getElementById("Description").value;
-      let price = document.getElementById("Price").value;
-      let quantity = document.getElementById("Quantity").value;
-      //if input plant name is blank alert pls fill out
-      if (name == "") 
-      {
-        //Show Alert on Page
-        alert("Plant name should be filled out");
-         //Return False to Wont Submit
-        return false;
-      }
-        //if input plant description is blank alert pls fill out
-      else if (description == "") 
-      {
-        //Show Alert on Page
-        alert("Description should be filled out");
-         //Return False to Wont Submit
-        return false;
-      }
-          //if input plant price is blank alert pls fill out
-      else if (price == "") 
-      {
-        //Show Alert on Page
-        alert("Price should be filled out");
-         //Return False to Wont Submit
-        return false;
-      }
-        //if input plant quantity is blank alert pls fill out
-      else if (quantity == "") 
-      {
-        //Show Alert on Page
-        alert("Quantity should be filled out");
-         //Return False to Wont Submit
-        return false;
-      }
-      else
-      //Show Alert on Page For successful
-      alert("Successfully Submitted");
-      var x = document.getElementsByTagName("form");
-          //Prcoess submit form
-      x[0].submit();
-    }
-  </script>
   <style>
     /*Body color of update*/
     body {
@@ -113,10 +66,8 @@
     <!--Charles-> remove the onsubmit change to button onclick and make plant id to number and quantity
     Made the values to capital for care level, env, size, water, light, type-->
     <form  name="plantForm"  action="/plant/update/<%= theplant.Plant_Id %>" method="POST">
-      <label>Plant Name:</label><input type="text" name="Plant_Name" id="Plant_Name"
-        value="<%= theplant.Plant_Name %>" /> </br>
-      <label>Description:</label><input type="text" name="Description" id="Description"
-        value="<%= theplant.Description %>" /> </br>
+      <label>Plant Name:</label><input type="text" name="Plant_Name" id="Plant_Name" value="<%= theplant.Plant_Name %>" required /> </br>
+      <label>Description:</label><input type="text" name="Description" id="Description" value="<%= theplant.Description %>" required /> </br>
       <label>Care Level:</label>
       <select name="Care_Level" id="Care_Level">
         <option value="" disabled selected hidden>
@@ -161,7 +112,7 @@
         <option value="Medium">Medium</option>
         <option value="Small">Small</option>
       </select> </br>
-      <label>Price: </label> <input type="number" name="Price" id="Price" value="<%= theplant.Price %>" /> </br>
+      <label>Price: </label> <input type="number" name="Price" id="Price" value="<%= theplant.Price %>" required /> </br>
       <label>Plant Type: </label>
       <select name="Plant_Type" id="Plant_Type">
         <option value="" disabled selected hidden>
@@ -187,7 +138,7 @@
         <option value="Yes">Yes</option>
         <option value="No">No</option>
       </select> </br>
-      <label>Quantity: </label> <input type="number" name="Quantity" id="Quantity" value="<%= theplant.Quantity %>" />
+      <label>Quantity: </label> <input type="number" name="Quantity" id="Quantity" value="<%= theplant.Quantity %>" required />
       </br>
       <!--Charles Input Val-->
       <button type="submit" onclick="validateForm()">Submit</button>
