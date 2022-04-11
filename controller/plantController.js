@@ -5,6 +5,8 @@ const { response } = require('express');
 //Declare Variable for Mongoose on Plant Model
 var mongoose = require('mongoose'), Plant = mongoose.model('plants');
 
+
+
 //Modules for Plants
 module.exports={
     //Function to get all list of plants
@@ -122,7 +124,10 @@ module.exports={
             "Fruit_Bearing":req.body.Fruit_Bearing,
             "Quantity":req.body.Quantity
         }
+
         //Adds records from the database
+
+
         Plant.create(plantInfo,function(err,result){
             if (err) throw err;
         //Renders the list of all Plants in the path /
@@ -170,8 +175,6 @@ module.exports={
             "Fruit_Bearing":req.body.Fruit_Bearing,
             "Quantity":req.body.Quantity
         }
-
-        
 
 
         Plant.findOneAndUpdate({Plant_Id : req.params.id}, plantUpdate, function(err, results){

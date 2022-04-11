@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--Created By: William Charles See Ong C0797740, Ashray Pujari C0800447, Maria Theresa Corre C0784534, Amulya Baddam C0796372-->
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -162,9 +161,9 @@
                         <td> <a href="/plant/updating/<%=alltheplants[i].Plant_Id %>">
                                 <input type="button" value="Update">
                             </a>
-                            <form action ="/plant/delete/<%=alltheplants[i].Plant_Id %>" method="GET">
-                                <input type="submit" value="Delete">
-                            </form>
+                            <a href="/plant/delete/<%=alltheplants[i].Plant_Id %>">
+                                <input type="button" value="Delete">
+                            </a>
                         </td>
                     </tr>
                     <% } %>

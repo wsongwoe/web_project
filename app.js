@@ -42,6 +42,7 @@ db.once('open',function(){
 
 //Create variable for the plantController and its path
 var plantController = require('./controller/plantController');
+var validationJs = require('./public/javascript/addvalidation');
 //Constant exp variable
 const exp = require('constants');
 
@@ -60,6 +61,7 @@ app.get('/plant/delete/:id', plantController.DeleteById);
 //Function to update
 app.get('/plant/updating/:id', plantController.GetupdateId);
 app.post('/plant/update/:id', plantController.UpdateElement);
+app.delete('/plant/delete/:id', plantController.DeleteById);
 
 //all the addplant.ejs add function
 app.get('/add', function(req,res){

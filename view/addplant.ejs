@@ -9,16 +9,19 @@
   <link rel="stylesheet" href="css/addstyle.css">
   <script src="javascript/addvalidation.js"></script>
   <title>Add</title>
+
 </head>
+
+
 <body>
   <h1>Add Plants Form</h1>
   <div>
     <!--Charles-> remove the onsubmit change to button onclick and make plant id to number and quantity
     Made the values to capital for care level, env, size, water, light, type-->
     <form name="plantForm" action="/plant/add" method="POST">
-      <label>Plant Id:</label> <input type="number" name="Plant_Id" id="Plant_Id" /> </br>
-      <label>Plant Name:</label><input type="text" name="Plant_Name" id="Plant_Name" /> </br>
-      <label>Description:</label> <input type="text" name="Description" id="Description" /> </br>
+      <label>Plant Id:</label> <input type="number" name="Plant_Id" id="Plant_Id" required /> </br>
+      <label>Plant Name:</label><input type="text" name="Plant_Name" id="Plant_Name" required /> </br>
+      <label>Description:</label> <input type="text" name="Description" id="Description" required /> </br>
       <label>Care Level:</label>
       <select name="Care_Level" id="Care_Level">
         <option value="Hard">Hard</option>
@@ -49,7 +52,7 @@
         <option value="Small">Small</option>
       </select> </br>
       <label>Price: </label>
-      <input type="number" name="Price" id="Price" /> </br>
+      <input type="number" name="Price" id="Price" required /> </br>
       <label>Plant Type:</label>
       <select name="Plant_Type" id="Plant_Type">
         <option value="Annual">Annual</option>
@@ -66,7 +69,7 @@
         <option value="Yes">Yes</option>
         <option value="No">No</option>
       </select> </br>
-      <label>Quantity:</label><input type="number" name="Quantity" id="Quantity" /> </br>
+      <label>Quantity:</label><input type="number" name="Quantity" id="Quantity" required /> </br>
       <!--Calls Validation Form when submit onclick event-->
       <button type="button" onclick="validateForm()">Submit</button>
     </form>
